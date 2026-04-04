@@ -1,0 +1,15 @@
+{
+  "name": "code-interpreter-marketplace",
+  "owner": "fabiodouek",
+  "plugins": [
+    {
+      "name": "agentcore-sandbox",
+      "description": "Execute code in a secure AgentCore Code Interpreter sandbox for AWS troubleshooting",
+      "source": {
+        "type": "github",
+        "repo": "fabiodouek/code-interpreter",
+        "path": "plugins/agentcore-sandbox"
+      }
+    }
+  ]
+}
