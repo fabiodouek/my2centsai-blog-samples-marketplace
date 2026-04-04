@@ -28,7 +28,9 @@ it for all commands below.
 - The sandbox has Python with boto3, pandas, numpy, and matplotlib pre-installed
 - The sandbox IAM role has read access to CloudWatch Logs (`aws-controltower/CloudTrailLogs`)
 - Sessions timeout after 15 minutes if not explicitly stopped
-- Set `AGENTCORE_INTERPRETER_ID` env var to use a custom Code Interpreter (defaults to `aws.codeinterpreter.v1`)
+- Set `CUSTOM_AGENTCORE_INTERPRETER_ID` env var to use a custom Code Interpreter (defaults to `aws.codeinterpreter.v1`)
+- Set `CUSTOM_AGENTCORE_AWS_PROFILE` env var to use a specific AWS profile (defaults to the standard AWS credential chain)
+- Set `CUSTOM_AGENTCORE_AWS_REGION` env var to override the AWS region
 
 ## Important
 
