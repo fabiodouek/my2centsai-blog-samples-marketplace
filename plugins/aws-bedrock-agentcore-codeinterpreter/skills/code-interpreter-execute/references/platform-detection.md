@@ -40,7 +40,7 @@ case "$ARCH" in
 esac
 
 # Construct binary name
-BINARY="agentcore-sandbox-${OS}-${ARCH}"
+BINARY="${CLAUDE_PLUGIN_ROOT}/bin/agentcore-sandbox-${OS}-${ARCH}"
 if [ "$OS" = "windows" ]; then
   BINARY="${BINARY}.exe"
 fi

@@ -3,12 +3,12 @@
   "owner": "fabiodouek",
   "plugins": [
     {
-      "name": "agentcore-sandbox",
+      "name": "aws-bedrock-agentcore-codeinterpreter",
       "description": "Execute code in a secure AgentCore Code Interpreter sandbox for AWS troubleshooting",
       "source": {
         "type": "github",
         "repo": "fabiodouek/code-interpreter",
-        "path": "plugins/agentcore-sandbox"
+        "path": "plugins/aws-bedrock-agentcore-codeinterpreter"
       }
     }
   ]
