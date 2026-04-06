@@ -1,0 +1,17 @@
+{
+  "name": "my2centsai-blog-samples",
+  "version": "1.0.0",
+  "description": "A curated collection of Claude Code plugins referenced in blog posts.",
+  "owner": {
+    "name": "Fabio Douek"
+  },
+  "homepage": "https://www.my2cents.ai",
+  "repository": "https://github.com/fabiodouek/my2centsai-blog-samples",
+  "plugins": [
+    {
+      "name": "aws-bedrock-agentcore-codeinterpreter",
+      "source": "./plugins/aws-bedrock-agentcore-codeinterpreter",
+      "category": "development"
+    }
+  ]
+}
