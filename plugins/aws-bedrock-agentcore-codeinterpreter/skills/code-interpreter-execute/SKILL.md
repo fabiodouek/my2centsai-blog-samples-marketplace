@@ -159,6 +159,7 @@ For `start --json`:
 
 | Variable | Required | Description |
 |----------|----------|-------------|
+| `CLAUDE_PLUGIN_ROOT` | Auto | Set by Claude Code. Absolute path to the plugin root directory. Used to locate the binary in `bin/`. |
 | `CUSTOM_AGENTCORE_INTERPRETER_ID` | Yes | Code interpreter identifier |
 | `CUSTOM_AGENTCORE_AWS_PROFILE` | No | AWS shared config profile |
 | `CUSTOM_AGENTCORE_AWS_REGION` | No | AWS region override |
@@ -178,6 +179,21 @@ For `start --json`:
   ```bash
   $BINARY run --cmd "AWS_PAGER='' aws s3 ls"
   ```
+
+## Troubleshooting
+
+If something goes wrong, check these common issues before retrying:
+
+| Error | Likely cause | Fix |
+|-------|-------------|-----|
+| Binary not found / permission denied | Wrong platform binary or missing binary for this OS/arch | Re-run platform detection. Check that `$BINARY` path exists and is executable. Currently only `darwin-arm64` is shipped. |
+| `CUSTOM_AGENTCORE_INTERPRETER_ID` not set | Environment variable missing | Ask the user to set `CUSTOM_AGENTCORE_INTERPRETER_ID` in their Claude Code environment or shell profile. |
+| AWS credentials error / `ExpiredTokenException` | Missing or expired AWS credentials on the host | Ask the user to refresh credentials (`aws sso login`, `aws configure`, or set `CUSTOM_AGENTCORE_AWS_PROFILE`). |
+| Session start fails / connection refused | AgentCore service unreachable or interpreter ID invalid | Verify the interpreter ID is correct and the user has access. Check the AWS region is correct. |
+| Timeout exceeded | Code ran longer than the session timeout | Retry with a longer `--timeout` value, or break the work into smaller steps. |
+| `NoRegionError` / region not found inside sandbox | Region not passed into the sandbox code | Ensure both `AWS_DEFAULT_REGION` and `AWS_REGION` are set inside the sandbox code (see the "Set AWS_REGION" section above). |
+
+When reporting errors to the user, include the full stderr output so they can diagnose the issue.
 
 ## Examples
 
