@@ -1,12 +1,12 @@
 {
-  "name": "agentcore-sandbox",
+  "name": "aws-bedrock-agentcore-codeinterpreter",
   "version": "1.0.0",
-  "description": "Execute Python code in a secure AgentCore Code Interpreter sandbox for AWS troubleshooting",
+  "description": "Execute code in a secure AgentCore Code Interpreter sandbox for AWS troubleshooting",
   "author": {
     "name": "Fabio Douek"
   },
   "homepage": "https://my2centsai.com",
-  "repository": "https://github.com/fabiodouek/code-interpreter",
+  "repository": "https://github.com/fabiodouek/my2centsai-blog-samples-marketplace",
   "license": "Apache-2.0",
   "keywords": ["sandbox", "code-interpreter", "agentcore", "aws", "troubleshooting"]
 }

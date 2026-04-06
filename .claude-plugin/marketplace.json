@@ -1,15 +1,12 @@
 {
-  "name": "code-interpreter-marketplace",
+  "name": "my2centsai-blog-samples",
   "owner": "fabiodouek",
   "plugins": [
     {
       "name": "aws-bedrock-agentcore-codeinterpreter",
       "description": "Execute code in a secure AgentCore Code Interpreter sandbox for AWS troubleshooting",
-      "source": {
-        "type": "github",
-        "repo": "fabiodouek/code-interpreter",
-        "path": "plugins/aws-bedrock-agentcore-codeinterpreter"
-      }
+      "source": "./plugins/aws-bedrock-agentcore-codeinterpreter",
+      "category": "development"
     }
   ]
 }
