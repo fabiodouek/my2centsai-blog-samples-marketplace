@@ -11,7 +11,7 @@ A Claude Code plugin marketplace for AWS development and troubleshooting tools.
 ## Quick Start
 
 ```bash
-claude plugin add fabiodouek/my2centsai-blog-samples
+claude plugin install fabiodouek/my2centsai-blog-samples
 ```
 
 ## Repository Structure

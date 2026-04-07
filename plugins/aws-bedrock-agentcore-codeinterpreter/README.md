@@ -11,14 +11,15 @@ A [Claude Code](https://claude.ai/code) plugin that executes Python, JavaScript,
 
 ## Prerequisites
 
-- [Claude Code](https://claude.ai/code) installed
+- [Claude Code](https://claude.ai/code) 2.1.91 or later
 - AWS credentials configured on your machine (SSO, env vars, or shared config)
 - An AgentCore Code Interpreter identifier (set as `CUSTOM_AGENTCORE_INTERPRETER_ID`)
 
 ## Installation
 
 ```bash
-claude plugin add fabiodouek/my2centsai-blog-samples
+claude plugin marketplace add fabiodouek/my2centsai-blog-samples-marketplace
+claude plugin install aws-bedrock-agentcore-codeinterpreter@my2centsai-blog-samples
 ```
 
 ## Configuration
@@ -103,12 +104,14 @@ The skill wraps the `agentcore-sandbox` CLI binary, which communicates with the 
 
 ## Platform Support
 
-| Platform | Architecture | Status |
+| Platform | Architecture | Binary |
 |----------|-------------|--------|
-| macOS | ARM64 (Apple Silicon) | Available |
-| macOS | AMD64 | Planned |
-| Linux | ARM64 / AMD64 | Planned |
-| Windows | AMD64 | Planned |
+| macOS | ARM64 (Apple Silicon) | `agentcore-sandbox-darwin-arm64` |
+| macOS | AMD64 (Intel) | `agentcore-sandbox-darwin-amd64` |
+| Linux | ARM64 | `agentcore-sandbox-linux-arm64` |
+| Linux | AMD64 | `agentcore-sandbox-linux-amd64` |
+| Windows | ARM64 | `agentcore-sandbox-windows-arm64.exe` |
+| Windows | AMD64 | `agentcore-sandbox-windows-amd64.exe` |
 
 ## Examples
 
@@ -143,7 +146,7 @@ agentcore-sandbox stop $SESSION
 
 | Error | Likely Cause | Fix |
 |-------|-------------|-----|
-| Binary not found / permission denied | Wrong platform or missing binary | Check platform support above. Currently only `darwin-arm64` is shipped. |
+| Binary not found / permission denied | Wrong platform or missing binary | Check platform support above and verify the correct binary is present in `bin/`. |
 | `CUSTOM_AGENTCORE_INTERPRETER_ID` not set | Env var missing | Set `CUSTOM_AGENTCORE_INTERPRETER_ID` in your shell profile or Claude Code settings. |
 | AWS credentials error | Missing or expired credentials | Run `aws sso login` or set `CUSTOM_AGENTCORE_AWS_PROFILE`. |
 | Session start fails | Service unreachable or invalid interpreter ID | Verify the interpreter ID and AWS region. |
