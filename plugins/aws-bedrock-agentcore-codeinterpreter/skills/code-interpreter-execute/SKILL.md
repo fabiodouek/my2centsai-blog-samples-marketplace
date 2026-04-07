@@ -186,7 +186,7 @@ If something goes wrong, check these common issues before retrying:
 
 | Error | Likely cause | Fix |
 |-------|-------------|-----|
-| Binary not found / permission denied | Wrong platform binary or missing binary for this OS/arch | Re-run platform detection. Check that `$BINARY` path exists and is executable. Currently only `darwin-arm64` is shipped. |
+| Binary not found / permission denied | Wrong platform binary or missing binary for this OS/arch | Re-run platform detection. Check that `$BINARY` path exists and is executable. |
 | `CUSTOM_AGENTCORE_INTERPRETER_ID` not set | Environment variable missing | Ask the user to set `CUSTOM_AGENTCORE_INTERPRETER_ID` in their Claude Code environment or shell profile. |
 | AWS credentials error / `ExpiredTokenException` | Missing or expired AWS credentials on the host | Ask the user to refresh credentials (`aws sso login`, `aws configure`, or set `CUSTOM_AGENTCORE_AWS_PROFILE`). |
 | Session start fails / connection refused | AgentCore service unreachable or interpreter ID invalid | Verify the interpreter ID is correct and the user has access. Check the AWS region is correct. |
